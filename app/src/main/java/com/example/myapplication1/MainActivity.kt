@@ -27,14 +27,14 @@ class MainActivity : AppCompatActivity() {
         val statusTextView = findViewById<TextView>(R.id.statusTextView)
         val playAgainButton = findViewById<Button>(R.id.playAgainButton)
 
-        // Initialize Edge-to-Edge insets
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Initialize board
+
         for (i in 0 until boardSize) {
             for (j in 0 until boardSize) {
                 board[i][j] = ""
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-                // OnClickListener לשינוי הטקסט בתוך הריבוע
+
                 textView.setOnClickListener {
                     if (!gameOver && textView.text == "") {
                         textView.text = currentPlayer
